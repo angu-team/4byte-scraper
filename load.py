@@ -56,7 +56,7 @@ def fetch_page(api_url, page):
 
 def get_total_pages(api_url):
     """
-    Faz uma requisição inicial para obter o número total de páginas.
+    Faz uma requisição inicial para obter o número total de registros.
     """
     try:
         headers = {"User-Agent": "CustomAgent"}
@@ -69,10 +69,10 @@ def get_total_pages(api_url):
             print(f"[Info] Número total de registros estimado: {total_pages}")
             return total_pages
         else:
-            print(f"[Erro] Falha ao obter o número total de páginas: {response.status_code}")
+            print(f"[Erro] Falha ao obter o número total de registros: {response.status_code}")
             return None
     except requests.RequestException as e:
-        print(f"[Erro] Erro ao buscar o total de páginas: {e}")
+        print(f"[Erro] Erro ao buscar o total de registros: {e}")
         return None
 
 
